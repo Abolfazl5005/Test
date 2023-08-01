@@ -1,0 +1,22 @@
+import minestat
+w = 'apexgaming.ir' 
+blue = '#0000EE'
+b = 1
+currect = 0
+print('\n Port Hacking . . .',"\n Server:",w,"\n Start Port:",b,'\n\n\n\n\n')
+for i in range(1,65536):
+ try:
+  ms = minestat.MineStat(w, b)
+  if ms.online : 
+    file = open('ports',"w")
+    file.write(f"{b} online and ({ ms.current_players}) player in the game")
+    print("",b,"online and (", ms.current_players,") player in the game")
+    b+=1
+  elif ms.online == False:
+    print("",f"{b} offline")
+    b+=1
+  
+ except:
+  print("",b,"has a error")
+  b+=1
+print("All port are checked 1 - 65535"
